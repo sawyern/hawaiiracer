@@ -21,7 +21,15 @@ _global_script_class_icons={
 [application]
 
 config/name="HawaiiRacer"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SceneLoader="*res://scripts/SceneLoader.gd"
+SoundManager="*res://scripts/SoundManager.gd"
+Globals="*res://scripts/Globals.gd"
+Constants="*res://scripts/Constants.gd"
 
 [editor]
 

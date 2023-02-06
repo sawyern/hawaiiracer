@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprites/RacerSprite.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/StatBar.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Race.gd" type="Script" id=1]
+[ext_resource path="res://scripts/StatBar.gd" type="Script" id=2]
 
 [node name="Background" type="ColorRect"]
 anchor_right = 1.0
@@ -9,6 +9,11 @@ margin_right = 1024.0
 margin_bottom = 600.0
 mouse_filter = 2
 color = Color( 0.447059, 0.560784, 0.470588, 1 )
+script = ExtResource( 1 )
+racer_sprite = "res://sprites/RacerSprite.tscn"
+start_x = 40
+start_y = 540
+num_racers = 12
 
 [node name="Menu" type="ColorRect" parent="."]
 margin_left = 700.0
@@ -124,7 +129,7 @@ margin_right = 114.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 10, 0 )
 
-[node name="Button" type="Button" parent="Menu"]
+[node name="StartRaceButton" type="Button" parent="Menu"]
 margin_left = 111.0
 margin_top = 488.0
 margin_right = 205.0
@@ -132,7 +137,7 @@ margin_bottom = 519.0
 rect_pivot_offset = Vector2( 94, 31 )
 text = "Start Race"
 
-[node name="Button2" type="Button" parent="Menu"]
+[node name="NewRaceButton" type="Button" parent="Menu"]
 margin_left = 112.0
 margin_top = 528.0
 margin_right = 206.0
@@ -140,5 +145,5 @@ margin_bottom = 559.0
 rect_pivot_offset = Vector2( 94, 31 )
 text = "New Race"
 
-[node name="Area2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 251, 426 )
+[connection signal="pressed" from="Menu/StartRaceButton" to="." method="_on_StartRaceButton_pressed"]
+[connection signal="pressed" from="Menu/NewRaceButton" to="." method="_on_NewRaceButton_pressed"]

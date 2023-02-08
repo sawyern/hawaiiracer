@@ -41,60 +41,84 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Stat1" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
-margin_right = 114.0
+margin_right = 118.0
 margin_bottom = 14.0
 script = ExtResource( 2 )
 
 [node name="StatText" type="Label" parent="Menu/Stats/VBoxContainer/Stat1"]
-margin_right = 100.0
+margin_right = 70.0
 margin_bottom = 14.0
-rect_min_size = Vector2( 100, 0 )
+rect_min_size = Vector2( 70, 0 )
 text = "Strength"
 script = ExtResource( 6 )
 
+[node name="StatVal" type="Label" parent="Menu/Stats/VBoxContainer/Stat1"]
+margin_left = 74.0
+margin_right = 104.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 30, 0 )
+text = "0"
+script = ExtResource( 6 )
+
 [node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat1"]
-margin_left = 104.0
-margin_right = 114.0
+margin_left = 108.0
+margin_right = 118.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 10, 0 )
 
 [node name="Stat2" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
 margin_top = 18.0
-margin_right = 114.0
+margin_right = 118.0
 margin_bottom = 32.0
 script = ExtResource( 2 )
 index = 1
 
 [node name="StatText" type="Label" parent="Menu/Stats/VBoxContainer/Stat2"]
-margin_right = 100.0
+margin_right = 70.0
 margin_bottom = 14.0
-rect_min_size = Vector2( 100, 0 )
+rect_min_size = Vector2( 70, 0 )
 text = "Height"
 script = ExtResource( 6 )
 
+[node name="StatVal" type="Label" parent="Menu/Stats/VBoxContainer/Stat2"]
+margin_left = 74.0
+margin_right = 104.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 30, 0 )
+text = "0"
+script = ExtResource( 6 )
+
 [node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat2"]
-margin_left = 104.0
-margin_right = 114.0
+margin_left = 108.0
+margin_right = 118.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 10, 0 )
 
 [node name="Stat3" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
 margin_top = 36.0
-margin_right = 114.0
+margin_right = 118.0
 margin_bottom = 50.0
 script = ExtResource( 2 )
 index = 2
 
 [node name="StatText" type="Label" parent="Menu/Stats/VBoxContainer/Stat3"]
-margin_right = 100.0
+margin_right = 70.0
 margin_bottom = 14.0
-rect_min_size = Vector2( 100, 0 )
+rect_min_size = Vector2( 70, 0 )
 text = "Weight"
 script = ExtResource( 6 )
 
+[node name="StatVal" type="Label" parent="Menu/Stats/VBoxContainer/Stat3"]
+margin_left = 74.0
+margin_right = 104.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 30, 0 )
+text = "0"
+script = ExtResource( 6 )
+
 [node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat3"]
-margin_left = 104.0
-margin_right = 114.0
+margin_left = 108.0
+margin_right = 118.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 10, 0 )
 
@@ -127,19 +151,19 @@ script = ExtResource( 3 )
 scene = "Level"
 
 [node name="Measurement-vertical-icon" type="Sprite" parent="."]
-position = Vector2( 127, 81 )
+position = Vector2( 127, 42 )
 scale = Vector2( 0.188953, 0.433594 )
 texture = ExtResource( 4 )
 offset = Vector2( -730.338, 57.6577 )
 
 [node name="Measurement-vertical-icon2" type="Sprite" parent="."]
-position = Vector2( 127, 295 )
+position = Vector2( 127, 256 )
 scale = Vector2( 0.188953, 0.433594 )
 texture = ExtResource( 4 )
 offset = Vector2( -730.338, 57.6577 )
 
 [node name="Measurement-vertical-icon3" type="Sprite" parent="."]
-position = Vector2( -28, 511 )
+position = Vector2( -28, 472 )
 scale = Vector2( 0.188953, 0.433594 )
 texture = ExtResource( 4 )
 offset = Vector2( 89.9692, 50.7387 )

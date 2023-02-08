@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Race.gd" type="Script" id=1]
 [ext_resource path="res://scripts/StatBar.gd" type="Script" id=2]
+[ext_resource path="res://scripts/SceneLoadButton.gd" type="Script" id=3]
+[ext_resource path="res://sprites/measurement-vertical-icon.png" type="Texture" id=4]
+[ext_resource path="res://scripts/FontButton.gd" type="Script" id=5]
+[ext_resource path="res://scripts/FontLoader.gd" type="Script" id=6]
 
 [node name="Background" type="ColorRect"]
 anchor_right = 1.0
@@ -11,7 +15,7 @@ mouse_filter = 2
 color = Color( 0.447059, 0.560784, 0.470588, 1 )
 script = ExtResource( 1 )
 racer_sprite = "res://sprites/RacerSprite.tscn"
-start_x = 40
+start_x = 100
 start_y = 540
 num_racers = 12
 
@@ -45,7 +49,8 @@ script = ExtResource( 2 )
 margin_right = 100.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 100, 0 )
-text = "Stat 1"
+text = "Strength"
+script = ExtResource( 6 )
 
 [node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat1"]
 margin_left = 104.0
@@ -64,7 +69,8 @@ index = 1
 margin_right = 100.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 100, 0 )
-text = "Stat 1"
+text = "Height"
+script = ExtResource( 6 )
 
 [node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat2"]
 margin_left = 104.0
@@ -83,7 +89,8 @@ index = 2
 margin_right = 100.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 100, 0 )
-text = "Stat 1"
+text = "Weight"
+script = ExtResource( 6 )
 
 [node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat3"]
 margin_left = 104.0
@@ -91,59 +98,52 @@ margin_right = 114.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 10, 0 )
 
-[node name="Stat4" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
-margin_top = 54.0
-margin_right = 114.0
-margin_bottom = 68.0
-script = ExtResource( 2 )
-index = 3
-
-[node name="StatText" type="Label" parent="Menu/Stats/VBoxContainer/Stat4"]
-margin_right = 100.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 100, 0 )
-text = "Stat 1"
-
-[node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat4"]
-margin_left = 104.0
-margin_right = 114.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 10, 0 )
-
-[node name="Stat5" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
-margin_top = 72.0
-margin_right = 114.0
-margin_bottom = 86.0
-script = ExtResource( 2 )
-index = 4
-
-[node name="StatText" type="Label" parent="Menu/Stats/VBoxContainer/Stat5"]
-margin_right = 100.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 100, 0 )
-text = "Stat 1"
-
-[node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat5"]
-margin_left = 104.0
-margin_right = 114.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 10, 0 )
-
 [node name="StartRaceButton" type="Button" parent="Menu"]
-margin_left = 111.0
-margin_top = 488.0
-margin_right = 205.0
-margin_bottom = 519.0
+margin_left = 37.0
+margin_top = 495.0
+margin_right = 131.0
+margin_bottom = 526.0
 rect_pivot_offset = Vector2( 94, 31 )
 text = "Start Race"
+script = ExtResource( 5 )
 
 [node name="NewRaceButton" type="Button" parent="Menu"]
-margin_left = 112.0
-margin_top = 528.0
-margin_right = 206.0
-margin_bottom = 559.0
-rect_pivot_offset = Vector2( 94, 31 )
+margin_left = 38.0
+margin_top = 535.0
+margin_right = 132.0
+margin_bottom = 566.0
+rect_pivot_offset = Vector2( 66, 8 )
 text = "New Race"
+script = ExtResource( 5 )
+
+[node name="LevelSelectButton" type="Button" parent="Menu"]
+margin_left = 221.0
+margin_top = 560.0
+margin_right = 315.0
+margin_bottom = 591.0
+rect_pivot_offset = Vector2( 66, 8 )
+text = "Level Select"
+script = ExtResource( 3 )
+scene = "Level"
+
+[node name="Measurement-vertical-icon" type="Sprite" parent="."]
+position = Vector2( 127, 81 )
+scale = Vector2( 0.188953, 0.433594 )
+texture = ExtResource( 4 )
+offset = Vector2( -730.338, 57.6577 )
+
+[node name="Measurement-vertical-icon2" type="Sprite" parent="."]
+position = Vector2( 127, 295 )
+scale = Vector2( 0.188953, 0.433594 )
+texture = ExtResource( 4 )
+offset = Vector2( -730.338, 57.6577 )
+
+[node name="Measurement-vertical-icon3" type="Sprite" parent="."]
+position = Vector2( -28, 511 )
+scale = Vector2( 0.188953, 0.433594 )
+texture = ExtResource( 4 )
+offset = Vector2( 89.9692, 50.7387 )
 
 [connection signal="pressed" from="Menu/StartRaceButton" to="." method="_on_StartRaceButton_pressed"]
 [connection signal="pressed" from="Menu/NewRaceButton" to="." method="_on_NewRaceButton_pressed"]
+[connection signal="pressed" from="Menu/LevelSelectButton" to="." method="_on_NewRaceButton_pressed"]

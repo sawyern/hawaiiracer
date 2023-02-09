@@ -6,13 +6,13 @@ var speed = 0
 
 func _ready():
 	generate_stats()
-	print("Racer Generated: " + self.name)
-	print(stats)
+	#print("Racer Generated: " + self.name)
+	#print(stats)
 	self.connect("racer_click", get_parent().get_node("Menu/Stats/VBoxContainer/Stat1"), "update_stats")
 	self.connect("racer_click", get_parent().get_node("Menu/Stats/VBoxContainer/Stat2"), "update_stats")
 	self.connect("racer_click", get_parent().get_node("Menu/Stats/VBoxContainer/Stat3"), "update_stats")
-	#self.connect("racer_click", get_parent().get_node("Menu/Stats/VBoxContainer/Stat4"), "update_stats")
-	#self.connect("racer_click", get_parent().get_node("Menu/Stats/VBoxContainer/Stat5"), "update_stats")
+	self.connect("racer_click", get_parent().get_node("Menu/Stats/VBoxContainer/Stat4"), "update_stats")
+	self.connect("racer_click", get_parent().get_node("Menu/Stats/VBoxContainer/Stat5"), "update_stats")
 
 func _process(delta):
 	self.position.y -= speed
@@ -45,6 +45,12 @@ func get_speed(level) -> float:
 		return level2()
 	if level == 3:
 		return level3()
+	if level == 4:
+		return level4()
+	if level == 5:
+		return level5()
+	if level == 6:
+		return level6()
 	print("Invalid level, defaulting to level 1")
 	return level1()
 
@@ -52,10 +58,19 @@ func level1() -> float:
 	return stats[1]/10
 	
 func level2() -> float:
-	return (Constants.MAX_STAT - stats[2] + 1)/10
+	return (Constants.MAX_STAT - stats[0] + 1)/10
 	
 func level3() -> float:
-	return (level1() + level2())/2
+	return stats[2]/10
+	
+func level4() -> float:
+	return (stats[0]/10 + stats[1]/10)/2
+
+func level5() -> float:
+	return (Constants.MAX_STAT - stats[1] + 1)/10
+	
+func level6() -> float:
+	return (level1() + (Constants.MAX_STAT - stats[2] + 1)/10)/2
 
 func stop():
 	speed = 0

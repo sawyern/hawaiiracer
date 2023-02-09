@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Race.gd" type="Script" id=1]
 [ext_resource path="res://scripts/StatBar.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://sprites/measurement-vertical-icon.png" type="Texture" id=4]
 [ext_resource path="res://scripts/FontButton.gd" type="Script" id=5]
 [ext_resource path="res://scripts/FontLoader.gd" type="Script" id=6]
+[ext_resource path="res://sprites/Back_Hawaii.png" type="Texture" id=7]
 
 [node name="Background" type="ColorRect"]
 anchor_right = 1.0
@@ -17,7 +18,11 @@ script = ExtResource( 1 )
 racer_sprite = "res://sprites/RacerSprite.tscn"
 start_x = 100
 start_y = 540
-num_racers = 12
+num_racers = 8
+
+[node name="BackHawaii" type="Sprite" parent="."]
+position = Vector2( 354, 378 )
+texture = ExtResource( 7 )
 
 [node name="Menu" type="ColorRect" parent="."]
 margin_left = 700.0
@@ -37,11 +42,11 @@ margin_bottom = 463.0
 color = Color( 0.764706, 0.639216, 0.639216, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Menu/Stats"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 158.0
+margin_bottom = 52.0
 
 [node name="Stat1" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
-margin_right = 118.0
+margin_right = 158.0
 margin_bottom = 14.0
 script = ExtResource( 2 )
 
@@ -49,7 +54,7 @@ script = ExtResource( 2 )
 margin_right = 70.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 70, 0 )
-text = "Strength"
+text = "Spirit"
 script = ExtResource( 6 )
 
 [node name="StatVal" type="Label" parent="Menu/Stats/VBoxContainer/Stat1"]
@@ -68,7 +73,7 @@ rect_min_size = Vector2( 10, 0 )
 
 [node name="Stat2" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
 margin_top = 18.0
-margin_right = 118.0
+margin_right = 158.0
 margin_bottom = 32.0
 script = ExtResource( 2 )
 index = 1
@@ -77,7 +82,7 @@ index = 1
 margin_right = 70.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 70, 0 )
-text = "Height"
+text = "Vigor"
 script = ExtResource( 6 )
 
 [node name="StatVal" type="Label" parent="Menu/Stats/VBoxContainer/Stat2"]
@@ -96,7 +101,7 @@ rect_min_size = Vector2( 10, 0 )
 
 [node name="Stat3" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
 margin_top = 36.0
-margin_right = 118.0
+margin_right = 158.0
 margin_bottom = 50.0
 script = ExtResource( 2 )
 index = 2
@@ -105,7 +110,7 @@ index = 2
 margin_right = 70.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 70, 0 )
-text = "Weight"
+text = "Patience"
 script = ExtResource( 6 )
 
 [node name="StatVal" type="Label" parent="Menu/Stats/VBoxContainer/Stat3"]
@@ -117,6 +122,62 @@ text = "0"
 script = ExtResource( 6 )
 
 [node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat3"]
+margin_left = 108.0
+margin_right = 118.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="Stat4" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
+margin_top = 54.0
+margin_right = 158.0
+margin_bottom = 68.0
+script = ExtResource( 2 )
+index = 3
+
+[node name="StatText" type="Label" parent="Menu/Stats/VBoxContainer/Stat4"]
+margin_right = 70.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 70, 0 )
+text = "Valor"
+script = ExtResource( 6 )
+
+[node name="StatVal" type="Label" parent="Menu/Stats/VBoxContainer/Stat4"]
+margin_left = 74.0
+margin_right = 104.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 30, 0 )
+text = "0"
+script = ExtResource( 6 )
+
+[node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat4"]
+margin_left = 108.0
+margin_right = 118.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="Stat5" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
+margin_top = 72.0
+margin_right = 158.0
+margin_bottom = 86.0
+script = ExtResource( 2 )
+index = 4
+
+[node name="StatText" type="Label" parent="Menu/Stats/VBoxContainer/Stat5"]
+margin_right = 70.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 70, 0 )
+text = "Willpower"
+script = ExtResource( 6 )
+
+[node name="StatVal" type="Label" parent="Menu/Stats/VBoxContainer/Stat5"]
+margin_left = 74.0
+margin_right = 104.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 30, 0 )
+text = "0"
+script = ExtResource( 6 )
+
+[node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat5"]
 margin_left = 108.0
 margin_right = 118.0
 margin_bottom = 14.0
@@ -167,6 +228,15 @@ position = Vector2( -28, 472 )
 scale = Vector2( 0.188953, 0.433594 )
 texture = ExtResource( 4 )
 offset = Vector2( 89.9692, 50.7387 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 710.0
+margin_top = 75.0
+margin_right = 969.0
+margin_bottom = 89.0
+text = "Makahiki Racer"
+script = ExtResource( 6 )
+size = 50
 
 [connection signal="pressed" from="Menu/StartRaceButton" to="." method="_on_StartRaceButton_pressed"]
 [connection signal="pressed" from="Menu/NewRaceButton" to="." method="_on_NewRaceButton_pressed"]

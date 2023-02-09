@@ -3,7 +3,7 @@ extends HBoxContainer
 export var index = 0
 
 func _ready():
-	pass
+	set_visibility(Constants.LEVEL_NUM_BARS[Globals.level][index])
 
 func set_name(var name : String):
 	$StatText.text = name
@@ -13,6 +13,9 @@ func set_bar_width(var size : float):
 
 func set_val(var val : float):
 	$StatVal.text = val as String
+	
+func set_visibility(var visible : bool):
+	self.visible = visible
 
 func update_stats(stats):
 	if stats == null:

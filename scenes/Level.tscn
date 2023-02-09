@@ -52,3 +52,27 @@ margin_bottom = 86.0
 text = "Level 3"
 script = ExtResource( 2 )
 level = 3
+
+[node name="Level4" type="Button" parent="Background/VBoxContainer"]
+margin_top = 90.0
+margin_right = 400.0
+margin_bottom = 110.0
+text = "Level 4"
+script = ExtResource( 2 )
+level = 4
+
+[node name="Level5" type="Button" parent="Background/VBoxContainer"]
+margin_top = 114.0
+margin_right = 400.0
+margin_bottom = 134.0
+text = "Level 5"
+script = ExtResource( 2 )
+level = 5
+
+[node name="Level6" type="Button" parent="Background/VBoxContainer"]
+margin_top = 138.0
+margin_right = 400.0
+margin_bottom = 158.0
+text = "Level 6"
+script = ExtResource( 2 )
+level = 6

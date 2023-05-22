@@ -3,8 +3,10 @@ extends Area2D
 var stats = []
 signal racer_click(stats)
 var speed = 0
+var race_over = false
 
 func _ready():
+	race_over = false
 	generate_stats()
 	#print("Racer Generated: " + self.name)
 	#print(stats)
@@ -15,29 +17,27 @@ func _ready():
 	self.connect("racer_click", get_parent().get_node("Menu/Stats/VBoxContainer/Stat5"), "update_stats")
 
 func _process(delta):
-	self.position.y -= speed
-	if (self.position.y < 50 and speed != 0):
+	if race_over: return
+	self.position.x += speed
+	if (self.position.x > 650 and speed != 0):
 		get_parent().call("win_race")
 	
 func generate_stats():
 	stats = []
 	for i in range(0, Constants.MAX_STATS):
 		stats.append(Constants.rng.randf_range(Constants.MIN_STAT, Constants.MAX_STAT))
-		
-func _on_Area2D_input_event(viewport : Node, event : InputEvent, shape_idx):
-	if event is InputEventMouseButton \
-	and event.button_index == BUTTON_LEFT \
-	and event.pressed:
-		print("emitting signal racer_click(" + stats as String + ")")
-		emit_signal("racer_click", stats)
+
+func _on_Button_pressed():
+	print("emitting signal racer_click(" + stats as String + ")")
+	emit_signal("racer_click", stats)
+	get_parent().call("deselect_all")
 
 func _exit_tree():
-	emit_signal("racer_click", null)
+	emit_signal("racer_click", [0, 0, 0, 0, 0])
 
 func race():
 	speed = get_speed(Globals.level)	
-
-
+	
 func get_speed(level) -> float:
 	if level == 1:
 		return level1()
@@ -74,3 +74,8 @@ func level6() -> float:
 
 func stop():
 	speed = 0
+	race_over = true
+
+
+func _on_Button_mouse_entered():
+	pass # Replace with function body.

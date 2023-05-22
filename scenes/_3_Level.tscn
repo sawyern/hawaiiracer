@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/FontLoader.gd" type="Script" id=1]
+[ext_resource path="res://scripts/buttons/LevelSceneLoadButton.gd" type="Script" id=2]
+[ext_resource path="res://resources/backgrounds/background-title-page.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 300.0 ],
+"_edit_vertical_guides_": [ 512.0 ]
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.447059, 0.560784, 0.470588, 1 )
+
+[node name="Background-title-page" type="Sprite" parent="Background"]
+position = Vector2( 512, 300 )
+scale = Vector2( 1, 1.04167 )
+texture = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -142.0
+margin_top = 125.0
+margin_right = 58.0
+margin_bottom = 675.0
+custom_constants/separation = 15
+
+[node name="Title" type="Label" parent="Background/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 14.0
+text = "Makahiki Racer"
+align = 1
+script = ExtResource( 1 )
+size = 50
+font = "Header"
+color = Color( 0, 0.247059, 0.305882, 1 )
+
+[node name="Level1" type="Button" parent="Background/VBoxContainer"]
+margin_top = 29.0
+margin_right = 200.0
+margin_bottom = 49.0
+text = "Level 1"
+script = ExtResource( 2 )
+
+[node name="Level2" type="Button" parent="Background/VBoxContainer"]
+margin_top = 64.0
+margin_right = 200.0
+margin_bottom = 84.0
+text = "Level 2"
+script = ExtResource( 2 )
+level = 2
+
+[node name="Level3" type="Button" parent="Background/VBoxContainer"]
+margin_top = 99.0
+margin_right = 200.0
+margin_bottom = 119.0
+text = "Level 3"
+script = ExtResource( 2 )
+level = 3
+
+[node name="Level4" type="Button" parent="Background/VBoxContainer"]
+margin_top = 134.0
+margin_right = 200.0
+margin_bottom = 154.0
+text = "Level 4"
+script = ExtResource( 2 )
+level = 4
+
+[node name="Level5" type="Button" parent="Background/VBoxContainer"]
+margin_top = 169.0
+margin_right = 200.0
+margin_bottom = 189.0
+text = "Level 5"
+script = ExtResource( 2 )
+level = 5
+
+[node name="Level6" type="Button" parent="Background/VBoxContainer"]
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 224.0
+text = "Level 6"
+script = ExtResource( 2 )
+level = 6

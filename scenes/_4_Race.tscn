@@ -1,0 +1,315 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/Race.gd" type="Script" id=1]
+[ext_resource path="res://scripts/StatBar.gd" type="Script" id=2]
+[ext_resource path="res://scripts/buttons/SceneLoadButton.gd" type="Script" id=3]
+[ext_resource path="res://resources/play.png" type="Texture" id=4]
+[ext_resource path="res://scripts/buttons/FontButton.gd" type="Script" id=5]
+[ext_resource path="res://scripts/FontLoader.gd" type="Script" id=6]
+[ext_resource path="res://resources/refresh.png" type="Texture" id=7]
+[ext_resource path="res://resources/backgrounds/background2.png" type="Texture" id=8]
+
+[node name="Background" type="ColorRect"]
+anchor_right = 1.0
+margin_right = 1024.0
+margin_bottom = 600.0
+mouse_filter = 2
+color = Color( 0.447059, 0.560784, 0.470588, 1 )
+script = ExtResource( 1 )
+racer_sprite = "res://sprites/RacerSprite.tscn"
+start_x = 100
+start_y = 560
+num_racers = 8
+
+[node name="Background2" type="Sprite" parent="."]
+position = Vector2( 350, 300 )
+scale = Vector2( 1, 1.04167 )
+texture = ExtResource( 8 )
+
+[node name="Menu" type="ColorRect" parent="."]
+margin_left = 700.0
+margin_right = 1024.0
+margin_bottom = 599.0
+color = Color( 0, 0.352941, 0.439216, 1 )
+
+[node name="Stats" type="ColorRect" parent="Menu"]
+anchor_right = 1.0
+margin_top = 150.0
+margin_bottom = 461.0
+color = Color( 0, 0, 0, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/Stats"]
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 166.0
+margin_bottom = 162.0
+custom_constants/separation = 15
+
+[node name="Stat1" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
+margin_right = 158.0
+margin_bottom = 25.0
+script = ExtResource( 2 )
+
+[node name="StatText" type="Label" parent="Menu/Stats/VBoxContainer/Stat1"]
+margin_top = 5.0
+margin_right = 70.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 70, 0 )
+text = "Spirit"
+script = ExtResource( 6 )
+font = "Body"
+
+[node name="StatVal" type="Label" parent="Menu/Stats/VBoxContainer/Stat1"]
+margin_left = 74.0
+margin_top = 5.0
+margin_right = 104.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 30, 0 )
+text = "0"
+script = ExtResource( 6 )
+font = "Body"
+
+[node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat1"]
+margin_left = 108.0
+margin_right = 118.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 10, 25 )
+color = Color( 0.729412, 0.886275, 0.909804, 1 )
+
+[node name="StatBarBack" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat1/StatBar"]
+margin_right = 200.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 100, 25 )
+color = Color( 0.729412, 0.886275, 0.909804, 0.356863 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Stat2" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
+margin_top = 40.0
+margin_right = 158.0
+margin_bottom = 65.0
+script = ExtResource( 2 )
+index = 1
+
+[node name="StatText" type="Label" parent="Menu/Stats/VBoxContainer/Stat2"]
+margin_top = 5.0
+margin_right = 70.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 70, 0 )
+text = "Vigor"
+script = ExtResource( 6 )
+font = "Body"
+
+[node name="StatVal" type="Label" parent="Menu/Stats/VBoxContainer/Stat2"]
+margin_left = 74.0
+margin_top = 5.0
+margin_right = 104.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 30, 0 )
+text = "0"
+script = ExtResource( 6 )
+font = "Body"
+
+[node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat2"]
+margin_left = 108.0
+margin_right = 118.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 10, 25 )
+color = Color( 0.729412, 0.886275, 0.909804, 1 )
+
+[node name="StatBarBack" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat2/StatBar"]
+margin_right = 200.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 100, 25 )
+color = Color( 0.729412, 0.886275, 0.909804, 0.356863 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Stat3" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
+margin_top = 80.0
+margin_right = 158.0
+margin_bottom = 105.0
+script = ExtResource( 2 )
+index = 2
+
+[node name="StatText" type="Label" parent="Menu/Stats/VBoxContainer/Stat3"]
+margin_top = 5.0
+margin_right = 70.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 70, 0 )
+text = "Patience"
+script = ExtResource( 6 )
+font = "Body"
+
+[node name="StatVal" type="Label" parent="Menu/Stats/VBoxContainer/Stat3"]
+margin_left = 74.0
+margin_top = 5.0
+margin_right = 104.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 30, 0 )
+text = "0"
+script = ExtResource( 6 )
+font = "Body"
+
+[node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat3"]
+margin_left = 108.0
+margin_right = 118.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 10, 25 )
+color = Color( 0.729412, 0.886275, 0.909804, 1 )
+
+[node name="StatBarBack" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat3/StatBar"]
+margin_right = 200.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 100, 25 )
+color = Color( 0.729412, 0.886275, 0.909804, 0.356863 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Stat4" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
+margin_top = 120.0
+margin_right = 158.0
+margin_bottom = 145.0
+script = ExtResource( 2 )
+index = 3
+
+[node name="StatText" type="Label" parent="Menu/Stats/VBoxContainer/Stat4"]
+margin_top = 5.0
+margin_right = 70.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 70, 0 )
+text = "Valor"
+script = ExtResource( 6 )
+font = "Body"
+
+[node name="StatVal" type="Label" parent="Menu/Stats/VBoxContainer/Stat4"]
+margin_left = 74.0
+margin_top = 5.0
+margin_right = 104.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 30, 0 )
+text = "0"
+script = ExtResource( 6 )
+font = "Body"
+
+[node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat4"]
+margin_left = 108.0
+margin_right = 118.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 10, 25 )
+color = Color( 0.729412, 0.886275, 0.909804, 1 )
+
+[node name="StatBarBack" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat4/StatBar"]
+margin_right = 200.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 100, 25 )
+color = Color( 0.729412, 0.886275, 0.909804, 0.356863 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Stat5" type="HBoxContainer" parent="Menu/Stats/VBoxContainer"]
+margin_top = 160.0
+margin_right = 158.0
+margin_bottom = 185.0
+script = ExtResource( 2 )
+index = 4
+
+[node name="StatText" type="Label" parent="Menu/Stats/VBoxContainer/Stat5"]
+margin_top = 5.0
+margin_right = 70.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 70, 0 )
+text = "Willpower"
+script = ExtResource( 6 )
+font = "Body"
+
+[node name="StatVal" type="Label" parent="Menu/Stats/VBoxContainer/Stat5"]
+margin_left = 74.0
+margin_top = 5.0
+margin_right = 104.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 30, 0 )
+text = "0"
+script = ExtResource( 6 )
+font = "Body"
+
+[node name="StatBar" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat5"]
+margin_left = 108.0
+margin_right = 118.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 10, 25 )
+color = Color( 0.729412, 0.886275, 0.909804, 1 )
+
+[node name="StatBarBack" type="ColorRect" parent="Menu/Stats/VBoxContainer/Stat5/StatBar"]
+margin_right = 200.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 100, 25 )
+color = Color( 0.729412, 0.886275, 0.909804, 0.356863 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="StartRaceButton" type="Button" parent="Menu"]
+margin_left = 18.0
+margin_top = 490.0
+margin_right = 148.0
+margin_bottom = 524.0
+rect_pivot_offset = Vector2( 48, 4 )
+text = "Start Race"
+icon = ExtResource( 4 )
+expand_icon = true
+script = ExtResource( 5 )
+
+[node name="NewRaceButton" type="Button" parent="Menu"]
+margin_left = 165.0
+margin_top = 490.0
+margin_right = 295.0
+margin_bottom = 524.0
+rect_pivot_offset = Vector2( 48, 4 )
+text = "New Race"
+icon = ExtResource( 7 )
+expand_icon = true
+script = ExtResource( 5 )
+
+[node name="LevelSelectButton" type="Button" parent="Menu"]
+margin_left = 7.0
+margin_top = 15.0
+margin_right = 101.0
+margin_bottom = 46.0
+rect_pivot_offset = Vector2( 66, 8 )
+text = "< All Levels"
+script = ExtResource( 3 )
+scene = "_3_Level"
+
+[node name="Measurement-vertical-icon" type="Sprite" parent="."]
+position = Vector2( 127, 42 )
+scale = Vector2( 0.188953, 0.433594 )
+offset = Vector2( -730.338, 57.6577 )
+
+[node name="Measurement-vertical-icon2" type="Sprite" parent="."]
+position = Vector2( 127, 256 )
+scale = Vector2( 0.188953, 0.433594 )
+offset = Vector2( -730.338, 57.6577 )
+
+[node name="Measurement-vertical-icon3" type="Sprite" parent="."]
+position = Vector2( -28, 472 )
+scale = Vector2( 0.188953, 0.433594 )
+offset = Vector2( 89.9692, 50.7387 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 710.0
+margin_top = 97.0
+margin_right = 969.0
+margin_bottom = 111.0
+text = "Makahiki Racer"
+script = ExtResource( 6 )
+size = 40
+font = "Header"
+
+[connection signal="pressed" from="Menu/StartRaceButton" to="." method="_on_StartRaceButton_pressed"]
+[connection signal="pressed" from="Menu/NewRaceButton" to="." method="_on_NewRaceButton_pressed"]
+[connection signal="pressed" from="Menu/LevelSelectButton" to="." method="_on_NewRaceButton_pressed"]

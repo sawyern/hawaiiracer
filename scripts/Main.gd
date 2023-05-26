@@ -8,5 +8,5 @@ func _ready():
 	_restart()
 
 func _restart():
-	SceneLoader._load_scene("Race")
+	SceneLoader._load_scene("_1_Welcome")
 	SoundManager._start_bgm()

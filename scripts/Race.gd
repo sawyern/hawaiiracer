@@ -11,14 +11,14 @@ signal stop_race()
 var loaded_racers : Array
 
 const colors = [
-	Color.red,
-	Color.blue,
-	Color.green,
-	Color.purple,
-	Color.yellow,
+	Color.cornflower,
+	Color.fuchsia,
 	Color.orange,
-	Color.hotpink,
-	Color.aqua
+	Color.yellow,
+	Color.purple,
+	Color.green,
+	Color.mediumblue,
+	Color.red
 ]
 
 func _ready():

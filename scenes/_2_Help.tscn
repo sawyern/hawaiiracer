@@ -32,7 +32,7 @@ margin_bottom = 430.0
 [node name="Title" type="Label" parent="VBoxContainer"]
 margin_right = 400.0
 margin_bottom = 14.0
-text = "Makahiki Racer"
+text = "How To Play"
 script = ExtResource( 1 )
 size = 50
 font = "Header"
@@ -41,8 +41,10 @@ color = Color( 0, 0.247059, 0.305882, 1 )
 [node name="Desc" type="Label" parent="VBoxContainer"]
 margin_top = 18.0
 margin_right = 400.0
-margin_bottom = 49.0
-text = "What makes the fastest runner? Watch the race and try to figure it out!"
+margin_bottom = 83.0
+text = "What makes the fastest racer?
+
+Click on each fish to view their stats and try to predit the winner of the race."
 autowrap = true
 script = ExtResource( 1 )
 size = 20
@@ -50,9 +52,9 @@ font = "Body"
 color = Color( 0, 0, 0, 1 )
 
 [node name="Button" type="Button" parent="VBoxContainer"]
-margin_top = 53.0
+margin_top = 87.0
 margin_right = 400.0
-margin_bottom = 73.0
+margin_bottom = 107.0
 text = "Play"
 script = ExtResource( 2 )
 scene = "_3_Level"

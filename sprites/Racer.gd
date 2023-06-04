@@ -8,8 +8,6 @@ var race_over = false
 func _ready():
 	race_over = false
 	generate_stats()
-	#print("Racer Generated: " + self.name)
-	#print(stats)
 	self.connect("racer_click", get_parent().get_node("Menu/Stats/VBoxContainer/Stat1"), "update_stats")
 	self.connect("racer_click", get_parent().get_node("Menu/Stats/VBoxContainer/Stat2"), "update_stats")
 	self.connect("racer_click", get_parent().get_node("Menu/Stats/VBoxContainer/Stat3"), "update_stats")
@@ -54,22 +52,27 @@ func get_speed(level) -> float:
 	print("Invalid level, defaulting to level 1")
 	return level1()
 
+# High Vigor
 func level1() -> float:
 	return stats[1]/10
-	
+
+# High 	
 func level2() -> float:
-	return (Constants.MAX_STAT - stats[0] + 1)/10
+	return stats[0]/10
 	
 func level3() -> float:
-	return stats[2]/10
+	return (Constants.MAX_STAT - stats[0] + 1)/10
 	
 func level4() -> float:
+	return stats[2]/10
+	
+func level5() -> float:
 	return (stats[0]/10 + stats[1]/10)/2
 
-func level5() -> float:
+func level6() -> float:
 	return (Constants.MAX_STAT - stats[1] + 1)/10
 	
-func level6() -> float:
+func level7() -> float:
 	return (level1() + (Constants.MAX_STAT - stats[2] + 1)/10)/2
 
 func stop():

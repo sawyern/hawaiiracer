@@ -86,3 +86,11 @@ margin_bottom = 224.0
 text = "Level 6"
 script = ExtResource( 2 )
 level = 6
+
+[node name="Level7" type="Button" parent="Background/VBoxContainer"]
+margin_top = 239.0
+margin_right = 200.0
+margin_bottom = 259.0
+text = "Level 7"
+script = ExtResource( 2 )
+level = 7

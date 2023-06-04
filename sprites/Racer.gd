@@ -48,7 +48,9 @@ func get_speed(level) -> float:
 	if level == 5:
 		return level5()
 	if level == 6:
-		return level6()
+		return level6()	
+	if level == 7:
+		return level7()
 	print("Invalid level, defaulting to level 1")
 	return level1()
 

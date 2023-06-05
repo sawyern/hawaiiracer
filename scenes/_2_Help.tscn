@@ -44,7 +44,7 @@ margin_right = 400.0
 margin_bottom = 83.0
 text = "What makes the fastest racer?
 
-Click on each fish to view their stats and try to predit the winner of the race."
+Click on each fish to view their stats and try to predict the winner of the race."
 autowrap = true
 script = ExtResource( 1 )
 size = 20

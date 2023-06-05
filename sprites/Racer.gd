@@ -58,22 +58,27 @@ func get_speed(level) -> float:
 func level1() -> float:
 	return stats[1]/10
 
-# High 	
+# High Spirit
 func level2() -> float:
 	return stats[0]/10
 	
+# Low Spirit
 func level3() -> float:
 	return (Constants.MAX_STAT - stats[0] + 1)/10
-	
+
+# High Patience	
 func level4() -> float:
 	return stats[2]/10
-	
+
+# High Vigor and High Spirit
 func level5() -> float:
 	return (stats[0]/10 + stats[1]/10)/2
 
+# Low Vigor
 func level6() -> float:
 	return (Constants.MAX_STAT - stats[1] + 1)/10
-	
+
+# High Vigor and Low Patience	
 func level7() -> float:
 	return (level1() + (Constants.MAX_STAT - stats[2] + 1)/10)/2
 
